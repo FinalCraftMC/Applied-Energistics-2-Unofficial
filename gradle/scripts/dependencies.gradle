@@ -21,21 +21,20 @@
 
 repositories {
     mavenLocal()
-//    ChickenBones' maven repo is unavailable now...
-//    maven {
-//        name "ChickenBones"
-//        url "http://chickenbones.net/maven/"
-//    }
+    maven {
+        name "ChickenBones"
+        url "http://chickenbones.net/maven/"
+    }
 
     maven {
         name "Mobius"
         url "http://mobiusstrip.eu/maven"
     }
 
-    maven {
-        name "FireBall API Depot"
-        url "http://dl.tsr.me/artifactory/libs-release-local"
-    }
+//    maven {
+//        name "FireBall API Depot"
+//        url "http://dl.tsr.me/artifactory/libs-release-local"
+//    }
 
     maven {
         name = "Player"
@@ -47,10 +46,10 @@ repositories {
         url = "http://maven.tterrag.com/"
     }
 
-    maven  {
-        name = "RX14 Proxy"
-        url = "http://mvn.rx14.co.uk/repo/"
-    }
+//    maven  {
+//        name = "RX14 Proxy"
+//        url = "http://mvn.rx14.co.uk/repo/"
+//    }
 
     maven {
         name "OpenComputers Repo"
@@ -110,15 +109,11 @@ dependencies {
 //    mods name: 'ThermalExpansion', version: "[${minecraft_version}]${texpansion_version}-dev", ext: 'jar'
 //    mods name: 'ThermalFoundation', version: "[${minecraft_version}]${tfoundation_version}-dev", ext: 'jar'
 
-//    compileOnly "codechicken:ForgeMultipart:${minecraft_version}-${fmp_version}:dev"
-//    compileOnly "codechicken:CodeChickenLib:${minecraft_version}-${code_chicken_lib_version}:dev"
-//    compileOnly "codechicken:CodeChickenCore:${minecraft_version}-${code_chicken_core_version}:dev"
-//    compileOnly "codechicken:NotEnoughItems:${minecraft_version}-${nei_version}:dev"
-    compileOnly files("lib/ForgeMultipart-${minecraft_version}-${fmp_version}-dev.jar")
-    compileOnly files("lib/CodeChickenLib-${minecraft_version}-${code_chicken_lib_version}-dev.jar")
-    compileOnly files("lib/CodeChickenCore-${minecraft_version}-${code_chicken_core_version}-dev.jar")
-    compileOnly files("lib/NotEnoughItems-${minecraft_version}-${nei_version}-dev.jar")
-
+    // I will not run minecraft with those mods. I don't know why......
+    compileOnly "codechicken:ForgeMultipart:${minecraft_version}-${fmp_version}:dev"
+    compileOnly "codechicken:CodeChickenLib:${minecraft_version}-${code_chicken_lib_version}:dev"
+    compileOnly "codechicken:CodeChickenCore:${minecraft_version}-${code_chicken_core_version}:dev"
+    compileOnly "codechicken:NotEnoughItems:${minecraft_version}-${nei_version}:dev"
     compile files("lib/buildcraft-${bc_version}-dev.jar")
     compile files("lib/PneumaticCraft-${minecraft_version}-${pneumaticcraft_version}-api.jar")
 
@@ -129,17 +124,25 @@ dependencies {
 
     // self compiled APIs
     compile "appeng:Waila:${waila_version}_${minecraft_version}:api"
-    compile "appeng:RotaryCraft:${rotarycraft_version}:api"
-    compile "appeng:mekanism:${minecraft_version}-${mekansim_version}:api"
-    compile "appeng:InventoryTweaks:${invtweaks_version}:api"
+//    compile "appeng:RotaryCraft:${rotarycraft_version}:api"
+//    compile "appeng:mekanism:${minecraft_version}-${mekansim_version}:api"
+    compile files("lib/InventoryTweaks-deobf-1.58-147.jar")
+    compile files("lib/Mekanism-1.7.10-9.1.0.281.jar")
+    compile files("lib/RotaryCraft+1.7.10+V26b.jar")
+    compile files("lib/MineFactoryReloaded-[1.7.10]2.8.2B1-188.jar")
+    compile files("lib/InventoryTweaks-1.59-dev-152.jar")
+    compile files("lib/CraftGuide-1.7.1.0-forge.jar")
+    compile files("lib/ColoredLightsCore-1.3.7.39.jar")
+
+//    compile "appeng:InventoryTweaks:${invtweaks_version}:api"
 
     // self compiled stubs
-    compile(group: 'api', name: 'coloredlightscore', version: "${api_coloredlightscore_version}")
-    compile(group: 'api', name: 'craftguide', version: "${api_craftguide_version}")
+//    compile(group: 'api', name: 'coloredlightscore', version: "${api_coloredlightscore_version}")
+//    compile(group: 'api', name: 'craftguide', version: "${api_craftguide_version}")
     compile(group: 'api', name: 'immibis', version: "${api_immibis_version}")
-    compile(group: 'api', name: 'mfr', version: "${api_mfr_version}")
+//    compile(group: 'api', name: 'mfr', version: "${api_mfr_version}")
     compile(group: 'api', name: 'railcraft', version: "${api_railcraft_version}")
-    compile(group: 'api', name: 'rf', version: "${api_rf_version}")
+//    compile(group: 'api', name: 'rf', version: "${api_rf_version}")
 
     testCompile "junit:junit:4.12"
 }
